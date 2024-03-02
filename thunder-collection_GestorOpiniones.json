@@ -1,0 +1,382 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "GestorOpiniones",
+    "dateExported": "2024-03-02T00:09:29.548Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "ed1a615c-a6bc-4acb-a123-c8801a5f6c83",
+            "name": "User",
+            "containerId": "",
+            "created": "2024-03-01T05:32:58.614Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "fbabf441-13ea-40fa-8719-51eb3b2d8a6a",
+            "name": "Publication",
+            "containerId": "",
+            "created": "2024-03-01T05:33:19.305Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "b4bf531a-537a-444c-a778-1509600f2dc1",
+            "name": "Category",
+            "containerId": "",
+            "created": "2024-03-01T13:56:14.927Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "61287076-5401-4105-9260-57a7d4bb52b7",
+            "name": "Comment",
+            "containerId": "",
+            "created": "2024-03-01T17:50:49.233Z",
+            "sortNum": 50000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "a8afe6bb-072d-43fa-b72d-b24b0d6e2fac",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "ed1a615c-a6bc-4acb-a123-c8801a5f6c83",
+            "name": "register",
+            "url": "register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-01T00:13:25.605Z",
+            "modified": "2024-03-01T13:23:15.576Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Carlos"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Armas"
+                    },
+                    {
+                        "name": "username",
+                        "value": "carmas"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "email",
+                        "value": "armassamuel018@gmail.com"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d44127d6-398b-4082-86d1-6bcd675fe0d9",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "ed1a615c-a6bc-4acb-a123-c8801a5f6c83",
+            "name": "test",
+            "url": "test",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-01T00:21:12.011Z",
+            "modified": "2024-03-01T16:54:21.573Z",
+            "headers": [
+                {
+                    "name": "test",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxMzc5ZjMxODc0OGI4YzIzNzIwODgiLCJ1c2VybmFtZSI6IndpbG1lcjEyIiwibmFtZSI6IldpbWVyIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MDkyOTkzMjMsImV4cCI6MTcwOTMxMDEyM30._3WC8Pyx1Mm8eXCXH0s9sp8g7BF4a5ulhcKj8DR_kfc"
+                },
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMxMjA0MywiZXhwIjoxNzA5MzIyODQzfQ.SH7XnlMX7pna85-q7firEim4pG2oL898rS4y62CKbZg"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b4dfdf8e-92b4-4f4e-b961-d19d50e3e9b8",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "ed1a615c-a6bc-4acb-a123-c8801a5f6c83",
+            "name": "login",
+            "url": "login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-01T00:23:45.375Z",
+            "modified": "2024-03-02T00:06:46.823Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "armassamuel018@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "e835e789-3558-4bd7-bd3d-a2b56e4b9a03",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "ed1a615c-a6bc-4acb-a123-c8801a5f6c83",
+            "name": "update",
+            "url": "editProfile/65e1d6d4e07a84f30f9a11e5",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-01T00:46:45.996Z",
+            "modified": "2024-03-01T15:17:24.016Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMwNjA0OSwiZXhwIjoxNzA5MzE2ODQ5fQ.3EU7sgCZBzHhRW8SXgAwOttHkPnERpTCcp1wQ0Wph1U"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "carmas"
+                    },
+                    {
+                        "name": "password",
+                        "value": "1212"
+                    },
+                    {
+                        "name": "newPassword",
+                        "value": "12345678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "34f357d7-c310-4bd7-a8d8-9760a117cb11",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "fbabf441-13ea-40fa-8719-51eb3b2d8a6a",
+            "name": "create",
+            "url": "createPublication",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-03-01T05:44:58.647Z",
+            "modified": "2024-03-01T17:13:40.471Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMxMjg2NiwiZXhwIjoxNzA5MzIzNjY2fQ.Jf6wm2EkZ7azAj5407roU6vZu5Ok9e0t0rxFVgbxyXA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Explorando la inteligencia artificial"
+                    },
+                    {
+                        "name": "categoryId",
+                        "value": "65e1e5abf0efa5547d68858e"
+                    },
+                    {
+                        "name": "text",
+                        "value": "La inteligencia artificial (IA) es un campo fascinante que está transformando rápidamente diversos aspectos de nuestra vida. Desde asistentes virtuales hasta sistemas de conducción autónoma, la IA está demostrando su potencial para revolucionar industrias enteras. Sin embargo, también plantea desafíos éticos y sociales importantes que debemos abordar con precaución. A medida que continuamos explorando las posibilidades de la IA, es crucial considerar cómo podemos utilizar esta tecnología de manera responsable y ética para el beneficio de la humanidad."
+                    },
+                    {
+                        "name": "userId",
+                        "value": "65e1d6d4e07a84f30f9a11e5"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "0efd0de9-0768-4193-9c69-4f7bd23e65a4",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "fbabf441-13ea-40fa-8719-51eb3b2d8a6a",
+            "name": "update",
+            "url": "updatePublication/65e20df3a699dda036ba6122",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-03-01T06:06:56.746Z",
+            "modified": "2024-03-01T17:21:06.831Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMxMjg2NiwiZXhwIjoxNzA5MzIzNjY2fQ.Jf6wm2EkZ7azAj5407roU6vZu5Ok9e0t0rxFVgbxyXA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Explorando la inteligencia artificial"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "e10ee6d6-7b9d-4d04-b2df-cf685af703c0",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "fbabf441-13ea-40fa-8719-51eb3b2d8a6a",
+            "name": "delete",
+            "url": "deletePublication/65e21004a699dda036ba6137",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-03-01T06:32:42.730Z",
+            "modified": "2024-03-01T17:27:43.763Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMxNDAyNywiZXhwIjoxNzA5MzI0ODI3fQ.0SZY45c4Bx4KyAYqI8wS46Y58Gt_jSEaa62x1jdi-Ms"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c135ec23-88bf-4468-a53a-a4ac85c4733b",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "b4bf531a-537a-444c-a778-1509600f2dc1",
+            "name": "create",
+            "url": "addCategory",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-03-01T13:56:22.453Z",
+            "modified": "2024-03-01T14:25:00.857Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxMzc5ZjMxODc0OGI4YzIzNzIwODgiLCJ1c2VybmFtZSI6IndpbG1lcjEyIiwibmFtZSI6IldpbWVyIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MDkzMDMwODYsImV4cCI6MTcwOTMxMzg4Nn0.B49N7LnS2qwrYWgqHanJ22eHzazgLp9-5uB5t8rId0U"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Tecnología"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Tecnología no es una cosa sino un proceso, una capacidad de transformar o combinar algo ya existente"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "3a1b19de-51ee-4a6d-b058-d4b0fff0484c",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "61287076-5401-4105-9260-57a7d4bb52b7",
+            "name": "create",
+            "url": "createComment",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-03-01T21:32:44.615Z",
+            "modified": "2024-03-01T21:34:26.170Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMyODgxMSwiZXhwIjoxNzA5MzM5NjExfQ.B2b1-UcTGWEkc8gHiXrP6aHfQPZzFjoTg-qerfIhzJw"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "publicationId",
+                        "value": "65e238667db75531e0af3f03"
+                    },
+                    {
+                        "name": "userId",
+                        "value": "65e1d6d4e07a84f30f9a11e5"
+                    },
+                    {
+                        "name": "text",
+                        "value": "Hola"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "0d1dfc76-4288-42e0-a4a2-f5e7705b6e9d",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "61287076-5401-4105-9260-57a7d4bb52b7",
+            "name": "update",
+            "url": "updateComment/65e26dace4acb99a737561d8",
+            "method": "PUT",
+            "sortNum": 150000,
+            "created": "2024-03-01T21:43:50.314Z",
+            "modified": "2024-03-02T00:08:22.976Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMyOTY5MywiZXhwIjoxNzA5MzQwNDkzfQ.iSaAqQecUPPOVHJ9WvGEzQj9gZO-LJkGAd1r6Bs4hR8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "text",
+                        "value": "La inteligencia artificial es un campo fascinante que está transformando nuestra forma de interactuar con la tecnología"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "966f38d1-64d1-4b71-88d6-c0ebd721c958",
+            "colId": "e7aa5196-b643-44f1-a413-a7d608c48ce8",
+            "containerId": "61287076-5401-4105-9260-57a7d4bb52b7",
+            "name": "delete",
+            "url": "deleteComment/65e24bab126db95cf9a9956a",
+            "method": "DELETE",
+            "sortNum": 160000,
+            "created": "2024-03-01T22:06:48.371Z",
+            "modified": "2024-03-02T00:06:56.393Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDZkNGUwN2E4NGYzMGY5YTExZTUiLCJ1c2VybmFtZSI6ImNhcm1hcyIsIm5hbWUiOiJDYXJsb3MiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcwOTMzODAwOCwiZXhwIjoxNzA5MzQ4ODA4fQ._UyS7qJqne9Y7ebV0PPviDEayXeYM_rmUc-p-lQbrYI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:2656/"
+        }
+    }
+}

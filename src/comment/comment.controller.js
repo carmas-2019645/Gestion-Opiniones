@@ -4,42 +4,42 @@ import User from '../user/user.model.js';
 
 export const createComment = async (req, res) => {
     try {
-        // Verificar los campos requeridos en el cuerpo de la solicitud
+        // Verifica
         const { publicationId, userId, text } = req.body;
         if (!publicationId || !userId || !text) {
             return res.status(400).send({ message: 'All fields are required' });
         }
 
-        // Buscar el usuario asociado al ID proporcionado
+        // Buscar el usuario
         const user = await User.findById(userId);
         if (!user) {
             return res.status(404).send({ message: 'User not found' });
         }
 
-        // Buscar la publicación asociada al ID proporcionado
+        // Busca la publicacion
         const publication = await Publication.findById(publicationId);
         if (!publication) {
             return res.status(404).send({ message: 'Publication not found' });
         }
 
-        // Crear una nueva instancia de comentario
+        // Crear la nueva instancia
         const newComment = new Comment({
             publicationId,
             userId,
             text,
         });
 
-        // Guardar el nuevo comentario en la base de datos
+        // Guardar
         const savedComment = await newComment.save();
 
-        // Responder con un mensaje de éxito, incluyendo el título de la publicación, el ID y el nombre del usuario
+        // Responder con un mensaje de éxito
         return res.status(201).send({ 
             message: 'Comment added successfully', 
             comment: { 
                 _id: savedComment._id,
-                publicationTitle: publication.title, // Mostrar el título en lugar del ID
-                userId: user._id, // Mostrar el ID del usuario
-                userName: user.name, // Mostrar el nombre del usuario
+                publicationTitle: publication.title, 
+                userId: user._id, 
+                userName: user.name, 
                 text: savedComment.text,
             }
         });
@@ -53,20 +53,19 @@ export const createComment = async (req, res) => {
 export const updateComment = async (req, res) => {
     try {
         const commentId = req.params.id;
-        const userId = req.user._id; // Suponiendo que el usuario se encuentra en el token JWT
+        const userId = req.user._id; 
 
-        // Verificar si el comentario existe
+        // Verificar
         const existingComment = await Comment.findById(commentId);
         if (!existingComment) {
             return res.status(404).send({ message: 'Comment not found' });
         }
-
-        // Verificar si el usuario tiene permiso para editar el comentario
+        // Verificar si el usuario tiene
         if (existingComment.userId.toString() !== userId.toString()) {
             return res.status(403).send({ message: 'You are not authorized to edit this comment' });
         }
 
-        // Actualizar el comentario con los campos proporcionados en la solicitud
+        // Actualizar el comentario
         const { text } = req.body;
         if (text) {
             existingComment.text = text;
@@ -86,26 +85,26 @@ export const deleteComment = async (req, res) => {
     try {
         const commentId = req.params.id;
         
-        // Verificar si req.user está definido y tiene la propiedad _id
+        // Verificar
         const userId = req.user && req.user._id;
 
-        // Verificar si userId está definido
+        // Verificar si el fue que ingreso el comentario
         if (!userId) {
             return res.status(403).send({ message: 'User not authenticated or missing user ID' });
         }
 
-        // Buscar el comentario que se desea eliminar
+        // Buscar el comentario
         const comment = await Comment.findById(commentId);
         if (!comment) {
             return res.status(404).send({ message: 'Comment not found' });
         }
 
-        // Verificar si el usuario tiene permiso para eliminar el comentario
+        // Verificar si el usuario tiene permiso
         if (comment.userId.toString() !== userId.toString()) {
             return res.status(403).send({ message: 'You are not authorized to delete this comment' });
         }
 
-        // Eliminar el comentario de la base de datos
+        // Elimina el comentario de la base de datos
         await Comment.findByIdAndDelete(commentId);
 
         return res.status(200).send({ message: 'Comment deleted successfully' });

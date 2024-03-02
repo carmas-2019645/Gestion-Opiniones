@@ -29,10 +29,8 @@ export const register = async(req, res)=>{
 
 export const login = async (req, res) => {
     try {
-        // Capturar datos del cuerpo de la solicitud
         let { username, email, password } = req.body;
 
-        // Validar que se proporcionen tanto el nombre de usuario como el correo electrónico y la contraseña
         if (!username && !email) {
             return res.status(400).send({ message: 'Username or email is required' });
         }
@@ -56,9 +54,9 @@ export const login = async (req, res) => {
                 name: user.name,
                 role: user.role
             };
-            // Generar el Token
+            // Generamos el token
             let token = await generateJwt(loggedUser);
-            // Responder al usuario
+            // Responde al usuario
             return res.send({
                 message: `Welcome ${loggedUser.name}`,
                 loggedUser,
@@ -66,7 +64,7 @@ export const login = async (req, res) => {
             });
         }
 
-        // Si el usuario no se encontró o la contraseña es incorrecta, devolver un error
+        // Aqui valida si las crendeciales sean verdaderas
         return res.status(404).send({ message: 'Invalid credentials' });
     } catch (err) {
         console.error(err);
@@ -78,15 +76,15 @@ export const login = async (req, res) => {
 
 export const editProfile = async (req, res) => {
     try {
-        // Obtener los datos del cuerpo de la solicitud
+        // Obtiene la solucitud
         const { username, password, newPassword, newName } = req.body;
 
-        // Validar que se proporcione al menos uno de los campos para editar
+        // Valida mas de algun campo a actualizar
         if (!username && !newPassword && !newName) {
             return res.status(400).send({ message: 'At least one field to edit is required' });
         }
 
-        // Encontrar al usuario por su ID
+        // Encuentra el usuario por medio del ID
         const user = await User.findById(req.user.id);
 
         // Si se proporciona un nuevo nombre, actualizarlo
@@ -94,7 +92,7 @@ export const editProfile = async (req, res) => {
             user.name = newName;
         }
 
-        // Si se proporciona un nuevo nombre de usuario, actualizarlo
+        // Aqui actualiza el usuario
         if (username) {
             user.username = username;
         }
@@ -104,21 +102,21 @@ export const editProfile = async (req, res) => {
             if (!password) {
                 return res.status(400).send({ message: 'Previous password is required to change password' });
             }
-            // Verificar la contraseña anterior
+            // Verifica la contraseña anterior
             const isPasswordValid = await bcrypt.compare(password, user.password);
             if (!isPasswordValid) {
                 return res.status(400).send({ message: 'Previous password is incorrect' });
             }
-            // Generar hash de la nueva contraseña
+            // Genera la nueva contraseña
             const hashedNewPassword = await bcrypt.hash(newPassword, 10);
-            // Actualizar la contraseña con el hash
+            // Actualizar la contraseña
             user.password = hashedNewPassword;
         }
 
-        // Guardar los cambios en la base de datos
+        // Guarda
         await user.save();
 
-        // Verificar si la contraseña se actualizó correctamente
+        // Verificar si la contraseña se actualizo
         const passwordUpdated = newPassword ? true : false;
 
         return res.send({ message: 'Profile updated successfully', passwordUpdated });

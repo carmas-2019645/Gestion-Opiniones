@@ -6,6 +6,6 @@ const api = express.Router();
 
 api.post('/createComment', [validateJwt], createComment)
 api.put('/updateComment/:id', [validateJwt], updateComment)
-api.delete('/deleteComment/:id', deleteComment)
+api.delete('/deleteComment/:id',[validateJwt], deleteComment)
 
 export default api
